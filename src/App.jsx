@@ -1,34 +1,41 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [Bi, setBi]=  useState("")
+const handlebi =async(e)=>{
+
+  if(e.target.value.length == 14){
+    setBi(e.target.value)
+    await fetch(`https://consulta.edgarsingui.ao/consultar/${Bi}`).then((response)=>{
+   console.log(response.json())
+  
+  })
+
+  }
+}
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
+    <div className='container'>
+      <div className="title">
+        <h2>Formulario de Cadastro</h2>
       </div>
-      <h1>Este é o branch Teste-022-horade co</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="content">
+        <div className="content-input">
+          <input type="text" placeholder='Nº BI' onChange={handlebi} />
+          <input type="text" placeholder='Nome Completo' disabled/>
+        </div>
+        <div className="content-input">
+          <input type="text" placeholder='Data de Nascimento' disabled/>
+          <input type="text"  placeholder='Morada' disabled/>
+        </div>
+        <div className="btn">
+          <button>Cadastrar</button>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
+
   )
 }
 
