@@ -15,9 +15,9 @@ body {
 }
 
 .container {
-  width: 40vw;
+  width: 50vw;
   background-color: #fff;
-  height: 60vh;
+  height: 50vh;
   border-radius: 8px;
   box-shadow: 1px 1px 1px #000;
 }
@@ -36,7 +36,7 @@ body {
 
 .container .content {
 
-  height: 40vh;
+  height: 30vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -61,7 +61,7 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-top: 6px;
+  
     width: 50vw;
     height: 10vh;
 }
@@ -73,8 +73,8 @@ body {
     width: 20vw;
   box-shadow: 1px 1px 1px #000;
    cursor:pointer;
-    margin-top: 7px;
+    margin-bottom: 14px;
 }
-.container .btn button:active {
-   transform: scale(0.9);
+@media screen {
+  
 }
